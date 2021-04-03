@@ -20,3 +20,15 @@ after_success:
   - docker push ps901/multi-nginx
   - docker push ps901/multi-server
   - docker push ps901/multi-worker
+
+deploy:
+  provider: elasticbeanstalk
+  region: 'ap-south-1'
+  app: 'MultiDocker'
+  env: 'Multidocker-env'
+  bucket_name: 'elasticbeanstalk-ap-south-1-070593501780'
+  bucket_path: 'docker-multi'
+  on: 
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY

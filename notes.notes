@@ -1,0 +1,8 @@
+Dockerrun.aws.json:
+    => name can be any // only for AWS visual purpose
+    => hostname is what you've set as in default.conf// like refenencing other container
+    => essential // if set to true agar yeh ruka sab container band ho jayenge
+    !atleast one service should be essential!
+    => hostname not required for nginx as no other service access nginx
+    => links are mapped to name to form up communication 
+    => links to server and client only because it needs to redirect traffic to them not use them as container
